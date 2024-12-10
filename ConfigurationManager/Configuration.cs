@@ -1,15 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppiumMobileTestProject.ConfigurationManager
 {
     public class Configuration
-    {
-        public static string? Url = Config["url"];
+    {       
+        public static string Url = Config["url"];
+        public static string Package = Config["package"];
+        public static string TimeForDriverWait = Config["timeForDriverWait"];
+        public static string PollingInterval = Config["pollingInterval"];
 
         private const string PathToConfig = @"ConfigurationManager\configuration.json";
 

@@ -3,14 +3,15 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 
+
 namespace AppiumMobileTestProject.DriverUtils
 {
-    public class AppiumDriver
+    public class AppiumTestDriver
     {
-        private static AndroidDriver? instance;
+        private static AndroidDriver instance;
         private const string platformName = "Android";
 
-        public static AndroidDriver? Instance
+        public static AndroidDriver Instance
         {
             get
             {
