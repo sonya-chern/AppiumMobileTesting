@@ -5,6 +5,8 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Toolbars
 {
     public class MainToolbarForm : ScreenPage
     {
+        private const string TextFromButtonNotification = "content-desc";
+
         private static Button Home => new(By.XPath($"//*[{PackageNameForXPath}nav_home\"]"), "Home button");
 
         private Button Outlets => new(By.XPath($"//*[{PackageNameForXPath}nav_outlets\"]"), "Outlets button");
@@ -28,5 +30,7 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Toolbars
         public void ClickProfile() => Profile.Click();
 
         public void ClickCart() => Cart.Click();
+
+        public string GetCartNotification() => Cart.GetAttributeText(TextFromButtonNotification);
     }
 }

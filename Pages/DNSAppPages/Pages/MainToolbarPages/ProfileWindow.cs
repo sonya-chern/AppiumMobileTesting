@@ -2,7 +2,7 @@
 using AppiumMobileTestProject.Pages.DNSAppPages.Toolbars;
 using OpenQA.Selenium;
 
-namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
+namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 {
     public class ProfileWindow : ScreenPage
     {
@@ -10,10 +10,10 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
 
         private Button Section(string sectionName) => new(By.XPath($"//*[{PackageNameForXPath}button_text\" and @text=\"{sectionName}\"]"), $"'{sectionName}' button");
 
-        private static Label SectionLocationText => new(By.XPath($"//*[{PackageNameForXPath}settlement_text\"]"), "Section Location Text label ");       
+        private static Label SectionLocationText => new(By.XPath($"//*[{PackageNameForXPath}settlement_text\"]"), "Section Location Text label ");
 
-        public MainToolbarForm mainToolbarForm => new();
-            
+        public MainToolbarForm MainToolbarForm => new();
+
         public ProfileWindow() : base(SectionLocationText, "Profile Window")
         { }
 

@@ -1,7 +1,7 @@
 ﻿using AppiumMobileTestProject.Elements;
 using OpenQA.Selenium;
 
-namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
+namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.SplashScreenPages
 {
     public class SplashScreenLocationWindow : ScreenPage
     {

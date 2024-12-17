@@ -1,15 +1,15 @@
 ﻿using AppiumMobileTestProject.ConfigurationManager;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 
 
-namespace AppiumMobileTestProject.DriverUtils
+namespace AppiumMobileTestProject.DriverAndUtils
 {
     public class AppiumTestDriver
     {
         private static AndroidDriver instance;
-        private const string platformName = "Android";
 
         public static AndroidDriver Instance
         {
@@ -23,7 +23,7 @@ namespace AppiumMobileTestProject.DriverUtils
                         {
                             AutomationName = AutomationName.AndroidUIAutomator2
                         };
-                        options.AddAdditionalAppiumOption(MobileCapabilityType.PlatformName, platformName);
+                        options.AddAdditionalAppiumOption(MobileCapabilityType.PlatformName, Configuration.PlatformName);
 
                         var url = new Uri(Configuration.Url);
                         instance = new AndroidDriver(url, options);
@@ -37,5 +37,9 @@ namespace AppiumMobileTestProject.DriverUtils
                 return instance;
             }
         }
+
+        public static IWebElement FindElement(By locator) => Instance.FindElement(locator);
+
+        public static List<IWebElement> FindElements(By locator) => Instance.FindElements(locator).ToList<IWebElement>();
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AppiumMobileTestProject.ConfigurationManager;
-using AppiumMobileTestProject.DriverUtils;
+using AppiumMobileTestProject.DriverAndUtils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -7,25 +7,24 @@ namespace AppiumMobileTestProject.Utils
 {
     public class WaiterUtil
     {
-        private static WebDriverWait wait = new WebDriverWait(AppiumTestDriver.Instance,
-                timeout: TimeSpan.FromSeconds(Convert.ToDouble(Configuration.TimeForDriverWait)))
-        {
-            PollingInterval = TimeSpan.FromSeconds(Convert.ToDouble(Configuration.PollingInterval)),
-        };
-
-        public static void WaitForElementExist(By locator)
-        {
-            wait.Until(e => e.FindElement(locator));
-        }
+        private static WebDriverWait Wait => new(AppiumTestDriver.Instance,
+                timeout: TimeSpan.FromSeconds(Convert.ToDouble(Configuration.TimeForDriverWait)));
 
         public static void WaitForEnabled(By locator)
         {
-            wait.Until(e => e.FindElement(locator).Enabled);
+            WaitForSearch(locator);
+            Wait.Until(e => e.FindElement(locator).Enabled);
         }
 
-        public static void WaitForDisplayed(By locator)
+        public static void WaitForSearch(By locator)
         {
-            wait.Until(e => e.FindElement(locator).Displayed);
+            Wait.Until(e => e.FindElements(locator).Count > 0);
+        }
+
+        public static List<IWebElement> WaitAndGetListWebElements(By locator)
+        {
+            WaitForSearch(locator);
+            return AppiumTestDriver.FindElements(locator);
         }
     }
 }

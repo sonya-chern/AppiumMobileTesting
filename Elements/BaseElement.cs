@@ -1,4 +1,4 @@
-﻿using AppiumMobileTestProject.DriverUtils;
+﻿using AppiumMobileTestProject.DriverAndUtils;
 using AppiumMobileTestProject.Utils;
 using Aquality.Selenium.Core.Logging;
 using OpenQA.Selenium;
@@ -21,16 +21,16 @@ namespace AppiumMobileTestProject.Elements
             get
             {
                 Logger.Instance.Info($"Find element '{Name}'");
-                WaiterUtil.WaitForDisplayed(Locator);
-                return AppiumTestDriver.Instance.FindElement(Locator);
+                WaiterUtil.WaitForSearch(Locator);
+                return AppiumTestDriver.FindElement(Locator);
             }
         }
 
-        public bool IsExist() => AppiumTestDriver.Instance.FindElements(Locator).Any();
+        public bool IsExist() => AppiumTestDriver.FindElements(Locator).Any();
 
         public bool IsDisplayed()
         {
-            WaiterUtil.WaitForDisplayed(Locator);
+            WaiterUtil.WaitForSearch(Locator);
             return Element.Displayed;
         }
 
@@ -43,8 +43,16 @@ namespace AppiumMobileTestProject.Elements
 
         public string GetText()
         {
-            Logger.Instance.Info($"Get text from element '{Name}'");
-            return Element.Text;
+            var text = Element.Text;
+            Logger.Instance.Info($"Text from element '{Name}': '{text}'");
+            return text;
+        }
+
+        public string GetAttributeText(string attributeName)
+        {
+            var text = Element.GetAttribute(attributeName);
+            Logger.Instance.Info($"Text from attribute '{attributeName}': '{text}'");
+            return text;
         }
     }
 }

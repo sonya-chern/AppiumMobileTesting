@@ -1,5 +1,5 @@
 ﻿using AppiumMobileTestProject.ConfigurationManager;
-using AppiumMobileTestProject.DriverUtils;
+using AppiumMobileTestProject.DriverAndUtils;
 using Aquality.Selenium.Core.Logging;
 
 namespace AppiumMobileTestProject.Tests

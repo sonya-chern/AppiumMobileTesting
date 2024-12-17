@@ -2,9 +2,9 @@
 using AppiumMobileTestProject.Pages.DNSAppPages.Toolbars;
 using OpenQA.Selenium;
 
-namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
+namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 {
-    public class EmptyFavouritesWindow : ScreenPage
+    public class FavouritesWindow : ScreenPage
     {
         private static Label EmptyContent = new(By.XPath($"//*[{PackageNameForXPath}empty_content_summary_text\"]"), "Empty Content label");
 
@@ -14,7 +14,7 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
 
         public MainToolbarForm mainToolbarForm => new();
 
-        public EmptyFavouritesWindow() : base(EmptyContent, "Empty Favourites Window")
+        public FavouritesWindow() : base(EmptyContent, "Empty Favourites Window")
         { }
 
         public string GetEmptyContent() => EmptyContent.GetText();

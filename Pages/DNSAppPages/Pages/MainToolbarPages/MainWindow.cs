@@ -2,19 +2,19 @@
 using AppiumMobileTestProject.Pages.DNSAppPages.Toolbars;
 using OpenQA.Selenium;
 
-namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
+namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 {
     public class MainWindow : ScreenPage
     {
-        private static Label NewInDNS = new(By.XPath($"//*[{PackageNameForXPath}news_title_text\"]"), "New in DNS label");
+        private static Image LogoDNS => new(By.XPath($"//*[{PackageNameForXPath}logo_image\"]"), "Logo DNS image");
 
-        private Button CityLocation = new(By.XPath($"//*[{PackageNameForXPath}change_current_settlement_button\"]"), "City Location button");
+        private Button CityLocation => new(By.XPath($"//*[{PackageNameForXPath}change_current_settlement_button\"]"), "City Location button");
 
         private Button Confirm => new(By.XPath($"//*[{PackageNameForXPath}confirm_current_settlement_button\"]"), "Confirm button");
 
-        public MainToolbarForm mainToolbarForm => new();
-            
-        public MainWindow() : base(NewInDNS, "Main Window")
+        public MainToolbarForm MainToolbarForm => new();
+
+        public MainWindow() : base(LogoDNS, "Main Window")
         { }
 
         public string GetCityLocation() => CityLocation.GetText();

@@ -2,5 +2,12 @@
   "city": "Москва",
   "textFromEmptyCart": "В корзине ничего нет",
   "textFromEmptyavourites": "В списке пока нет ни одного товара",
-  "package": "ru.dns.shop.android"
+  "package": "ru.dns.shop.android",
+  "filterMemoryCardSection": "Объем (ГБ)",
+  "volumMemoryCard": "128 ГБ 100",
+  "filterMemoryCard": "Объем (ГБ): 128 ГБ",
+  "textOnButtonInProductPage": "В корзине",
+  "cartNotification": "1 новое уведомление",
+  "snackBarInfo": "Товар удален",
+  "favorites": "Избранное"
 }

@@ -7,6 +7,13 @@ namespace AppiumMobileTestProject.TestDataManager
         public static string City = Config["city"];
         public static string ExpectedTextFromEmptyCart = Config["textFromEmptyCart"];
         public static string ExpectedTextFromEmptyFavourites = Config["textFromEmptyavourites"];
+        public static string FilterMemoryCard = Config["filterMemoryCard"];
+        public static string VolumMemoryCard = Config["volumMemoryCard"];
+        public static string FilterMemoryCardSection = Config["filterMemoryCardSection"];
+        public static string TextOnButtonInProductPage = Config["textOnButtonInProductPage"];
+        public static string CartNotification = Config["cartNotification"];
+        public static string SnackBarInfo = Config["snackBarInfo"];
+        public static string Favorites = Config["favorites"];
 
         private const string PathToConfig = @"TestDataManager\testData.json";
 
