@@ -1,29 +1,25 @@
 ﻿using AppiumMobileTestProject.DriverAndUtils;
-using AppiumMobileTestProject.Elements;
 using AppiumMobileTestProject.Pages.DNSAppPages.Toolbars;
-using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 {
-    public class CatalogWindow : ScreenPage
+    public class CatalogWindow : PageWithSections
     {
-        private static TextBox SearchField => new(By.XPath("//*[@resource-id=\"ru.dns.shop.android:id/search_edit\"]"), "Search textbox");
+        private static Dictionary<string, int> CatalogSection = new()
+        {
+            { "Аксессуары и услуги", 14 },
+            { "Бытовая техника", 1 },
+        };
 
         public MainToolbarForm MainToolbarForm => new();
 
-        public CatalogWindow() : base(SearchField, "Catalog Window")
+        public CatalogWindow() : base(CatalogSection.FirstOrDefault(x => x.Value == 1).Key, "Catalog Window")
         { }
 
-        public void ClickAccessoriesAndServices()
+        public void ClickSectionOnPage(string sectionName)
         {
             DriverUtils.ClickKeyboardPerform();
-            DriverUtils.ClickKeyboardKeyDownAndPerform((int)CatalogSections.AccessoriesAndServices);
+            ClickSection(sectionName, "Catalog Window", CatalogSection);
         }
-
-    }
-
-    enum CatalogSections
-    {
-        AccessoriesAndServices = 14
     }
 }

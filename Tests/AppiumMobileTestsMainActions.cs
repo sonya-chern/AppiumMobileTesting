@@ -8,8 +8,7 @@ namespace AppiumMobileTestProject.Tests
     {
         private SplashScreenLocationWindow SplashScreenLocationWindow => new();
         private SplashScreenEnterWindow SplashScreenEnterWindow => new();
-        private AlertPermissionNotification AlertPermissionNotification => new();
-        private MainWindow MainWindow => new();
+        private AlertPermissionNotification AlertPermissionNotification => new();  
         private CartWindow CartWindow => new();
         private ProfileWindow ProfileWindow => new();
         private FavouritesWindow EmptyFavouritesWindow => new();

@@ -1,22 +1,19 @@
-﻿using AppiumMobileTestProject.DriverAndUtils;
-using AppiumMobileTestProject.Elements;
-using OpenQA.Selenium;
-
-namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
+﻿namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
 {
-    public class ForMobilesWindow : ScreenPage
+    public class ForMobilesWindow : PageWithSections
     {
-        private static Button Chevron = new(By.XPath($"//*[{PackageNameForXPath}chevron_image\"]"), "Chevron button");
+        private static Dictionary<string, int> CatalogSection = new()
+        {
+            { "Карты памяти", 12 },
+            { "Наушники и гарнитуры", 1 },
+        };
 
-        public ForMobilesWindow() : base(Chevron, "Accessories And Services Window")
+        public ForMobilesWindow() : base(CatalogSection.FirstOrDefault(x => x.Value == 1).Key, "For Mobiles Window")
         { }
 
-        public void ClickМemoryCards() => DriverUtils.ClickKeyboardKeyDownAndPerform((int)ForMobilesSections.MemoryCards);
-
-    }
-
-    enum ForMobilesSections
-    {
-        MemoryCards = 12
+        public void ClickSectionOnPage(string sectionName)
+        {
+            ClickSection(sectionName, "For Mobiles Window", CatalogSection);
+        }
     }
 }

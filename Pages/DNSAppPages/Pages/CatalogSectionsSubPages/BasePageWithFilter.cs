@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.CatalogSectionsSubPages
 {
-    public class BasePageWithFilter : ScreenPage
+    public class BasePageWithFilter : BasePage
     {
-        protected static Button Filters => new(By.XPath($"//*[{PackageNameForXPath}filter_button\"]"), "Filters button");
+        protected static Button Filters => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/filter_button\"]"), "Filters button");
 
         public BasePageWithFilter(string name) : base(Filters, name)
         {

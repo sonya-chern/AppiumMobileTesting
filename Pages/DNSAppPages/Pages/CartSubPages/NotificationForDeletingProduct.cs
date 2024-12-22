@@ -4,11 +4,11 @@ using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.CartSubPages
 {
-    public class NotificationForDeletingProduct : ScreenPage
+    public class NotificationForDeletingProduct : BasePage
     {
-        private static Button Delete => new(By.XPath($"//*[{PackageNameForXPath}positive_button\"]"), "Delete button");
+        private static Button Delete => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/positive_button\"]"), "Delete button");
 
-        private Button Cancel => new(By.XPath($"//*[{PackageNameForXPath}negative_button\"]"), "Cancel button");
+        private Button Cancel => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/negative_button\"]"), "Cancel button");
 
         public NotificationForDeletingProduct() : base(Delete, "Notification For Deleting Product Window")
         { }

@@ -4,13 +4,13 @@ using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 {
-    public class FavouritesWindow : ScreenPage
+    public class FavouritesWindow : BasePage
     {
-        private static Label EmptyContent = new(By.XPath($"//*[{PackageNameForXPath}empty_content_summary_text\"]"), "Empty Content label");
+        private static Label EmptyContent = new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/empty_content_summary_text\"]"), "Empty Content label");
 
-        private Button GoToCatalog = new(By.XPath($"//*[{PackageNameForXPath}empty_content_action_button\"]"), "Go To Catalog button");
+        private Button GoToCatalog = new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/empty_content_action_button\"]"), "Go To Catalog button");
 
-        private Button GoToProfile => new(By.XPath($"//*[{PackageNameForXPath}login_button\"]"), "Go To Profile button");
+        private Button GoToProfile => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/login_button\"]"), "Go To Profile button");
 
         public MainToolbarForm mainToolbarForm => new();
 

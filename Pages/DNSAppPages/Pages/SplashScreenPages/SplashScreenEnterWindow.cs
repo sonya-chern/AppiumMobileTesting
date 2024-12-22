@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.SplashScreenPages
 {
-    public class SplashScreenEnterWindow : ScreenPage
+    public class SplashScreenEnterWindow : BasePage
     {
-        private static Button EnterLater => new(By.XPath($"//*[{PackageNameForXPath}skip_auth_button\"]"), "Enter Later button");
+        private static Button EnterLater => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/skip_auth_button\"]"), "Enter Later button");
 
         public SplashScreenEnterWindow() : base(EnterLater, "Splash Screen Enter Window")
         { }

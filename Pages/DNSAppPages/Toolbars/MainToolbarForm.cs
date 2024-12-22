@@ -3,19 +3,19 @@ using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.DNSAppPages.Toolbars
 {
-    public class MainToolbarForm : ScreenPage
+    public class MainToolbarForm : BasePage
     {
         private const string TextFromButtonNotification = "content-desc";
 
-        private static Button Home => new(By.XPath($"//*[{PackageNameForXPath}nav_home\"]"), "Home button");
+        private static Button Home => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/nav_home\"]"), "Home button");
 
-        private Button Outlets => new(By.XPath($"//*[{PackageNameForXPath}nav_outlets\"]"), "Outlets button");
+        private Button Outlets => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/nav_outlets\"]"), "Outlets button");
 
-        private Button Catalog => new(By.XPath($"//*[{PackageNameForXPath}nav_catalog\"]"), "Catalog button");
+        private Button Catalog => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/nav_catalog\"]"), "Catalog button");
 
-        private Button Cart => new(By.XPath($"//*[{PackageNameForXPath}nav_cart\"]"), "Cart button");
+        private Button Cart => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/nav_cart\"]"), "Cart button");
 
-        private Button Profile => new(By.XPath($"//*[{PackageNameForXPath}nav_profile\"]"), "Profile button");
+        private Button Profile => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/nav_profile\"]"), "Profile button");
 
         public MainToolbarForm() : base(Home, "Main Toolbar Form")
         {

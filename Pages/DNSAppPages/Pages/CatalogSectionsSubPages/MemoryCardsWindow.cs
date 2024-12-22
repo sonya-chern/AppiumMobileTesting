@@ -7,13 +7,13 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
 {
     public class MemoryCardsWindow : BasePageWithFilter
     {
-        private Button Filter(string name) => new(By.XPath($"//*[{PackageNameForXPath}title_text\" and @text=\"{name}\"]"), $"Filter '{name}' button");
+        private Button Filter(string name) => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/title_text\" and @text=\"{name}\"]"), $"Filter '{name}' button");
 
-        private Button Product(string name) => new(By.XPath($"//*[{PackageNameForXPath}product_title_text\" and @text=\"{name}\"]"), $"Product '{name}' button");
+        private Button Product(string name) => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/product_title_text\" and @text=\"{name}\"]"), $"Product '{name}' button");
 
-        private List<IWebElement> Prices => WaiterUtil.WaitAndGetListWebElements(By.XPath($"//*[{PackageNameForXPath}current_price_text\"]"));
+        private List<IWebElement> Prices => WaiterUtil.WaitAndGetListWebElements(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/current_price_text\"]"));
 
-        private List<IWebElement> ProductName => WaiterUtil.WaitAndGetListWebElements(By.XPath($"//*[{PackageNameForXPath}product_title_text\"]"));
+        private List<IWebElement> ProductName => WaiterUtil.WaitAndGetListWebElements(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/product_title_text\"]"));
 
         public MemoryCardsWindow() : base("Memory Cards Window")
         { }

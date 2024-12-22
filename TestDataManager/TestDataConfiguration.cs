@@ -14,6 +14,9 @@ namespace AppiumMobileTestProject.TestDataManager
         public static string CartNotification = Config["cartNotification"];
         public static string SnackBarInfo = Config["snackBarInfo"];
         public static string Favorites = Config["favorites"];
+        public static string AccessoriesAndServices = Config["accessoriesAndServices"];
+        public static string ForMobiles = Config["forMobiles"];
+        public static string MemoryCard = Config["memoryCard"];
 
         private const string PathToConfig = @"TestDataManager\testData.json";
 

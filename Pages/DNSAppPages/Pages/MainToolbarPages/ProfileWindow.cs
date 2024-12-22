@@ -4,13 +4,13 @@ using OpenQA.Selenium;
 
 namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 {
-    public class ProfileWindow : ScreenPage
+    public class ProfileWindow : BasePage
     {
-        private Button Enter => new(By.XPath($"//*[{PackageNameForXPath}login_button\"]"), "Enter Button");
+        private Button Enter => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/login_button\"]"), "Enter Button");
 
-        private Button Section(string sectionName) => new(By.XPath($"//*[{PackageNameForXPath}button_text\" and @text=\"{sectionName}\"]"), $"'{sectionName}' button");
+        private Button Section(string sectionName) => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/button_text\" and @text=\"{sectionName}\"]"), $"'{sectionName}' button");
 
-        private static Label SectionLocationText => new(By.XPath($"//*[{PackageNameForXPath}settlement_text\"]"), "Section Location Text label ");
+        private static Label SectionLocationText => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/settlement_text\"]"), "Section Location Text label ");
 
         public MainToolbarForm MainToolbarForm => new();
 

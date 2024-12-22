@@ -1,22 +1,18 @@
-﻿using AppiumMobileTestProject.DriverAndUtils;
-using AppiumMobileTestProject.Elements;
-using OpenQA.Selenium;
-
-namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
+﻿namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages
 {
-    public class AccessoriesAndServicesWindow : ScreenPage
+    public class AccessoriesAndServicesWindow : PageWithSections
     {
-        private static Image Image = new(By.XPath($"//*[{PackageNameForXPath}image\"]"), "Accessories And Services Image");
+        private static Dictionary<string, int> CatalogSection = new()
+        {
+            { "Для мобильных устройств", 1 }
+        };
 
-        public AccessoriesAndServicesWindow() : base(Image, "Accessories And Services Window")
+        public AccessoriesAndServicesWindow() : base(CatalogSection.FirstOrDefault(x => x.Value == 1).Key, "Accessories And Services Window")
         { }
 
-        public void ClickForMobiles() => DriverUtils.ClickKeyboardKeyDownAndPerform((int)AccessoriesAndServicesSections.ForMobiles);
-
-    }
-
-    enum AccessoriesAndServicesSections
-    {
-        ForMobiles = 1
+        public void ClickSectionOnPage(string sectionName)
+        {
+            ClickSection(sectionName, "Accessories And Services Window", CatalogSection);
+        }
     }
 }

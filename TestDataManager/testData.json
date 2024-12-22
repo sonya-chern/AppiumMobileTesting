@@ -4,10 +4,13 @@
   "textFromEmptyavourites": "В списке пока нет ни одного товара",
   "package": "ru.dns.shop.android",
   "filterMemoryCardSection": "Объем (ГБ)",
-  "volumMemoryCard": "128 ГБ 100",
+  "volumMemoryCard": "128 ГБ",
   "filterMemoryCard": "Объем (ГБ): 128 ГБ",
   "textOnButtonInProductPage": "В корзине",
   "cartNotification": "1 новое уведомление",
   "snackBarInfo": "Товар удален",
-  "favorites": "Избранное"
+  "favorites": "Избранное",
+  "accessoriesAndServices": "Аксессуары и услуги",
+  "forMobiles": "Для мобильных устройств",
+  "memoryCard": "Карты памяти"
 }

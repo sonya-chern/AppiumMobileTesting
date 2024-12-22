@@ -6,7 +6,6 @@ namespace AppiumMobileTestProject.Tests
 {
     public class AppiumMobileTestsCatalog : BaseTest
     {
-        private static MainWindow MainWindow => new();
         private static CatalogWindow CatalogWindow => new();
         private AccessoriesAndServicesWindow AccessoriesAndServicesWindow => new();
         private ForMobilesWindow ForMobilesWindow => new();
@@ -24,15 +23,15 @@ namespace AppiumMobileTestProject.Tests
 
             Assert.That(CatalogWindow.IsDisplayed(), Is.True, "Catalog Window is not displayed");
 
-            CatalogWindow.ClickAccessoriesAndServices();
+            CatalogWindow.ClickSectionOnPage(TestDataConfiguration.AccessoriesAndServices);
 
             Assert.That(AccessoriesAndServicesWindow.IsDisplayed(), Is.True, "Accessories And Services Window is not displayed");
 
-            AccessoriesAndServicesWindow.ClickForMobiles();
+            AccessoriesAndServicesWindow.ClickSectionOnPage(TestDataConfiguration.ForMobiles);
 
             Assert.That(ForMobilesWindow.IsDisplayed(), Is.True, "For Mobiles Window is not displayed");
 
-            ForMobilesWindow.ClickÌemoryCards();
+            ForMobilesWindow.ClickSectionOnPage(TestDataConfiguration.MemoryCard);
 
             Assert.That(MemoryCardsWindow.IsDisplayed(), Is.True, "Ìemory Cards Window is not displayed");
 
