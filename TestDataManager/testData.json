@@ -12,5 +12,6 @@
   "favorites": "Избранное",
   "accessoriesAndServices": "Аксессуары и услуги",
   "forMobiles": "Для мобильных устройств",
-  "memoryCard": "Карты памяти"
+  "memoryCard": "Карты памяти",
+  "testRotationApp": "com.android.chrome"
 }

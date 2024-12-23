@@ -34,6 +34,19 @@ namespace AppiumMobileTestProject.Elements
             return Element.Displayed;
         }
 
+        public bool IsNotDisplayed()
+        {
+            try
+            {
+                WaiterUtil.WaitForSearch(Locator);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void Click()
         {
             Logger.Instance.Info($"Click element '{Name}'");

@@ -12,6 +12,8 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
 
         private Button Confirm => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/confirm_current_settlement_button\"]"), "Confirm button");
 
+        private Button RefreshWhenContentEmpty => new(By.XPath($"//*[@resource-id=\"ru.dns.shop.android:id/empty_content_action_button\"]"), "Confirm button");
+
         public MainToolbarForm MainToolbarForm => new();
 
         public MainWindow() : base(LogoDNS, "Main Window")
@@ -20,5 +22,11 @@ namespace AppiumMobileTestProject.Pages.DNSAppPages.Pages.MainToolbarPages
         public string GetCityLocation() => CityLocation.GetText();
 
         public void ClickConfirm() => Confirm.Click();
+
+        public void ClickRefreshWhenContentEmpty() => RefreshWhenContentEmpty.Click();
+
+        public bool IsContentEmptyButtonDisplayed() => RefreshWhenContentEmpty.IsDisplayed();
+
+        public bool IsContentEmptyButtonNotDisplayed() => RefreshWhenContentEmpty.IsNotDisplayed();
     }
 }
