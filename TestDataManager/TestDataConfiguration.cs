@@ -6,9 +6,9 @@ namespace AppiumMobileTestProject.TestDataManager
     {
         public static string City = Config["city"];
         public static string ExpectedTextFromEmptyCart = Config["textFromEmptyCart"];
-        public static string ExpectedTextFromEmptyFavourites = Config["textFromEmptyavourites"];
+        public static string ExpectedTextFromEmptyFavorites = Config["textFromEmptyavourites"];
         public static string FilterMemoryCard = Config["filterMemoryCard"];
-        public static string VolumMemoryCard = Config["volumMemoryCard"];
+        public static string VolumeMemoryCard = Config["volumMemoryCard"];
         public static string FilterMemoryCardSection = Config["filterMemoryCardSection"];
         public static string TextOnButtonInProductPage = Config["textOnButtonInProductPage"];
         public static string CartNotification = Config["cartNotification"];
@@ -17,6 +17,7 @@ namespace AppiumMobileTestProject.TestDataManager
         public static string AccessoriesAndServices = Config["accessoriesAndServices"];
         public static string ForMobiles = Config["forMobiles"];
         public static string MemoryCard = Config["memoryCard"];
+        public static string TestRotationApp = Config["testRotationApp"];
 
         private const string PathToConfig = @"TestDataManager\testData.json";
 

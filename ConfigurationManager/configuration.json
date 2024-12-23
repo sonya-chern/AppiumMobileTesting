@@ -2,5 +2,5 @@
   "url": "http://localhost:4723/",
   "package": "ru.dns.shop.android",
   "platformName": "Android",
-  "timeForDriverWait": "10"
+  "timeForDriverWait": "25"
 }
